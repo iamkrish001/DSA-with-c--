@@ -7,9 +7,9 @@ using namespace std;
 #define MAX 1000 
 
 class Stack { 
-	int top; 
+ int top; 
 
-public: 
+ public: 
 	int a[MAX]; // Maximum size of Stack 
 
 	Stack() { top = -1; } 
