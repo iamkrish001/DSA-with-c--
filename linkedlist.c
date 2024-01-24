@@ -47,14 +47,46 @@
 
 #include<stdio.h>
 #include<stdlib.h>
-
+// creating node
 struct node{
-    int data;
-    struct node* link ; 
+    int value;
+    struct node* next;
 };
 
-// initializing the nodes
+int main(){
+// print the linkedlist
+void printLinkedlist(struct node* p){  // creating a new node pointer that points the node 
+while(p!=NULL){
+    printf("%d\n",p->value) ; 
+    p = p->next ; // p takes the address of next node and runs until it is null
+}
+}
 
-one = struct node *head; 
-two = struct node *; 
-one = struct node *head; 
+
+// initializing node 
+struct node *head;
+struct node *one = NULL;
+struct node *two = NULL;
+struct node *three = NULL;
+ 
+
+// allocating the memory   
+one= malloc(sizeof(struct node));
+two= malloc(sizeof(struct node));
+three= malloc(sizeof(struct node));
+
+// assigning the values
+one->value = 1 ;
+two->value = 2 ;
+three->value = 3 ;
+
+// linking the nodes
+one->next = two; 
+two->next = three; 
+three->next = NULL; 
+
+// passing the value
+head = one ; 
+printLinkedlist(head); 
+
+}
