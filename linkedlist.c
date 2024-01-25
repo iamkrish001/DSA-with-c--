@@ -65,28 +65,38 @@ while(p!=NULL){
 
 // initializing node 
 struct node *head;
+struct node *last;
 struct node *one = NULL;
 struct node *two = NULL;
 struct node *three = NULL;
+struct node *fourth = NULL;
  
 
 // allocating the memory   
 one= malloc(sizeof(struct node));
 two= malloc(sizeof(struct node));
 three= malloc(sizeof(struct node));
+fourth = malloc(sizeof(struct node)); // allocation of memory for fourth element
 
 // assigning the values
 one->value = 1 ;
 two->value = 2 ;
 three->value = 3 ;
-
 // linking the nodes
 one->next = two; 
 two->next = three; 
-three->next = NULL; 
-
+three->next = fourth; 
+fourth->next= NULL ; 
+if(fourth->next!=NULL){
+    head=last=fourth ; 
+}
+else{
+    fourth->value = 4 ; 
+}
 // passing the value
 head = one ; 
+last= fourth ; 
 printLinkedlist(head); 
 
 }
+
